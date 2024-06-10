@@ -26,21 +26,18 @@ jobs:
           node-version: "20.11.0"
 
       # Instalación de dependencias
-      - name: npm install
-
-      # Instalación de dependencias
       - name: Instala dependencias
         run:  npm i
 
       # Despliegue de la aplicación
       - name: Build
         run:  npm run build:prod
-
+git 
       # Deploy GitHub Pages
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4.0.0
         with:
-          build_dir: dist/
+          build_dir: dist/deswebintegral-deploy03
         env:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
       
